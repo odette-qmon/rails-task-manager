@@ -1,0 +1,10 @@
+<h1>Tasks:</h1>
+<ul>
+  <% @tasks.each do |task| %>
+    <li> <%= link_to task.title, task_path(task) %> </li>
+    <!-- <li> <%= link_to task.title, "/tasks/#{task.id}" %> </li>  -->
+  <% end %>
+</ul>
+<!-- link_to helper sometimes needs the prefix 'as: :task' (for the first example)
+ - get 'tasks/:id', to: 'tasks#show', as: :task -->
+<p><%= link_to "+ Add a new task", tasks_new_path %></p>
